@@ -1,0 +1,5 @@
+---
+wp_mysql_db: pressword
+wp_mysql_user: pressword
+wp_mysql_password: pressworddbpw2
+
