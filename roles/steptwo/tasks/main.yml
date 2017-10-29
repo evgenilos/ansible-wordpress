@@ -1,0 +1,18 @@
+---
+- name: Download WordPress
+  get_url:
+    url=https://wordpress.org/latest.tar.gz
+    dest=~/latest.tar.gz
+    validate_certs=no
+  become: no
+
+- name: Extract WordPress
+  unarchive:
+    src=~/latest.tar.gz dest=~/ copy=no
+  become: no
+
+- name: Install php extensions
+  apt: name={{ item }} state=present
+  with_items:
+    - php5-gd 
+    - libssh2-php

@@ -1,0 +1,18 @@
+---
+#WEB root folder locatopm
+web_root: '/var/www/html/'
+
+#Location of wordpress before it moved to web folder
+first_wp_path: '/home/evgeni/wordpress/'
+
+#User under wich permissions wordpress will be stored
+user: demo
+group: demo
+web_group: www-data
+
+wp_mysql_db: pressword
+wp_mysql_user: pressword
+wp_mysql_password: pressworddbpw2
+ 
+wp_download: https://wordpress.org/latest.zip
+

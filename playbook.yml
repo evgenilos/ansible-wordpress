@@ -1,7 +1,12 @@
 - hosts: wordpress
   become: true
+
+  vars_files:
+    - defaults/main.yml
+
   roles:
     - lamp
-    - php
-    - mysql
-    - wordpress
+    - stepone
+    - steptwo
+    - stepthree
+    - stepfour

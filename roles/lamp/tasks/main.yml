@@ -13,3 +13,13 @@
     - libapache2-mod-php5
     - php5-mcrypt
     - python-mysqldb
+
+- name: Update default Apache site
+  lineinfile:
+    dest=/etc/apache2/mods-enabled/dir.conf
+    regexp="{{ item.regexp }}"
+    line="{{ item.line }}"
+  with_items:
+    - {'regexp': "DirectoryIndex", line: "DirectoryIndex index.php index.html index.cgi  index.pl index.xhtml index.htm"}
+  notify:
+  - restart apache

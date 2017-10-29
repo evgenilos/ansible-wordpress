@@ -1,0 +1,15 @@
+---
+ - name: copying files from first folder to web root
+   command: "rsync -avP {{ first_wp_path }} {{ web_root }}"
+
+ - name: Creating group for new user
+   group: name={{ group }} state=present
+
+ - name: Create user under wich rights web root going to be set
+   action: user name={{ user }} groups={{ group }}  state=present
+
+ - name: Setting permissions of web root folder
+   file: dest={{ web_root }} owner={{ user }} group={{ web_group }} recurse=yes
+
+ - name: Creating uploads folder under wp-content
+   file: dest={{ web_root }}/wp-content/uploads owner={{ user }} group={{ web_group }} state=directory
