@@ -1,5 +1,5 @@
 - hosts: wordpress
-
+  become: true
   roles:
     - lamp
     - php
