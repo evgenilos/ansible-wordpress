@@ -3,7 +3,7 @@
 web_root: '/var/www/html/'
 
 #Location of wordpress before it moved to web folder
-first_wp_path: '/home/evgeni/wordpress/'
+first_wp_path: '{{ user_home.stdout }}/wordpress/'
 
 #User under wich permissions wordpress will be stored
 user: demo

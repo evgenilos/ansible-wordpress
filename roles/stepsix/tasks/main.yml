@@ -1,0 +1,20 @@
+---
+- name: Adding ServerName to apache conf
+  lineinfile:
+    path: /etc/apache2/sites-available/000-default.conf
+    line: "{{'\t'}}ServerName {{ ansible_default_ipv4.address }}"
+    insertafter: 'DocumentRoot /var/www/html' 
+
+- name: Adding folder permissions to apache conf
+  lineinfile:
+    path: /etc/apache2/sites-available/000-default.conf
+    line: "{{'\t'}}<Directory {{ web_root }}>{{'\n\t\t'}}AllowOverride All{{'\n\t'}}</Directory>"
+    insertafter: "ServerName {{ ansible_default_ipv4.address }}"
+
+- name: creating htaccess files
+  file: path={{ web_root }}/.htaccess state=touch owner={{ user }} group={{ web_group }} mode=0644
+
+- name: enabled mod_rewrite
+  apache2_module: name=rewrite state=present
+  notify:
+    - restart apache

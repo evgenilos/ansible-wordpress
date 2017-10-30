@@ -1,14 +1,19 @@
 ---
+- name: Getting user home dire before become
+  local_action: command echo ~
+  register: user_home
+  become: no
+
 - name: Download WordPress
   get_url:
     url=https://wordpress.org/latest.tar.gz
-    dest=~/latest.tar.gz
+    dest={{ first_wp_path }}/latest.tar.gz
     validate_certs=no
   become: no
 
 - name: Extract WordPress
   unarchive:
-    src=~/latest.tar.gz dest=~/ copy=no
+    src={{ first_wp_path }}/latest.tar.gz dest={{ first_wp_path }}/ copy=no
   become: no
 
 - name: Install php extensions
