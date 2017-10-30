@@ -7,13 +7,13 @@
 - name: Download WordPress
   get_url:
     url={{ wp_download }}
-    dest={{ first_wp_path }}/latest.tar.gz
+    dest={{ user_home.stdout }}/latest.tar.gz
     validate_certs=no
   become: no
 
 - name: Extract WordPress
   unarchive:
-    src={{ first_wp_path }}/latest.tar.gz dest={{ first_wp_path }}/ copy=no
+    src={{ user_home.stdout }}/latest.tar.gz dest={{ user_home.stdout }} copy=no
   become: no
 
 - name: Install php extensions

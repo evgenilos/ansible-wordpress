@@ -14,5 +14,5 @@ wp_mysql_db: pressword
 wp_mysql_user: pressword
 wp_mysql_password: pressworddbpw2
  
-wp_download: https://wordpress.org/latest.zip
+wp_download: https://wordpress.org/latest.tar.gz
 
