@@ -1,4 +1,4 @@
-# Automated process of Wordpress installation on Ubuntu 14.04
+# Automated installation of Wordpress on Ubuntu 14.04
 
 ## Introduction
 
