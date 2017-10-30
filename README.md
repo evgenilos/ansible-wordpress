@@ -1,4 +1,4 @@
-# Automated process of Wordpress installation on Ubuntu 14.04
+# Automated installation of Wordpress on Ubuntu 14.04
 
 ## Introduction
 
@@ -31,4 +31,7 @@ File should look like this:
 
 Run: ansible-playbook playbook.yml -b -u ben -K
 Where ben is user with sudo rights on remote machines and -K flag means that user password will be asked after executing the playbook.
+
+## P.S. 
+This is my first playbook on ansible so code could look like a porn.
 
