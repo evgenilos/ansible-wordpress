@@ -2,11 +2,15 @@
 
 ## Introduction
 
-This is ansible playbook created based on manual from https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-on-ubuntu-14-04
+This is ansible playbook created based on manual from:
+https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-on-ubuntu-14-04
+All roles are based on chapters from manual excluding first one called "lamp"
+which is installing LAMP set of software to continue with wordpress and "stepfive" wich require
+creating wordpress user in browser and does not exist as a role. 
 
 ## Versions
 
-The playbook was build on Ubuntu 14.04 using Ansible 2.4.1.0
+The playbook was build on Ubuntu 14.04 using Ansible 2.4.1.0 and tested using same environment
 
 ## Variables
 
